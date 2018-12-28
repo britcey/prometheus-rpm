@@ -1,0 +1,4 @@
+# Thanos query needs a list of hosts running the Thanos sidecar process
+# https://github.com/improbable-eng/thanos/blob/master/docs/service_discovery.md#file-service-discovery
+---
+- targets: ['localhost:9090']

@@ -13,7 +13,8 @@ rabbitmq_exporter \
 pushgateway \
 sachet \
 statsd_exporter \
-ping_exporter 
+ping_exporter \
+thanos
 
 .PHONY: $(PACKAGES7)
 

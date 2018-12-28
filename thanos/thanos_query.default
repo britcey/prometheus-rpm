@@ -1,0 +1,1 @@
+THANOS_QUERY_OPTS='--store=/etc/thanos/thanos_store_nodes.yml'

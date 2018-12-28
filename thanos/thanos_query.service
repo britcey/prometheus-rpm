@@ -1,0 +1,16 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=Thanos query - Thanos query frontend.
+Documentation=https://github.com/improbable-eng/thanos
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/thanos_query
+User=prometheus
+ExecStart=/usr/bin/thanos query $THANOS_QUERY_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
