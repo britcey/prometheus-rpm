@@ -54,10 +54,10 @@ mkdir -vp %{buildroot}%{_sharedstatedir}/prometheus
 install -D -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 install -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/default/%{name}
 %if 0%{?el5}
-install -D -m 644 %{SOURCE3} %{buildroot}%{_initrddir}/%{name}
+install -D -m 755 %{SOURCE3} %{buildroot}%{_initrddir}/%{name}
 %else 
     %if 0%{?el6} 
-    install -D -m 644 %{SOURCE3} %{buildroot}%{_initddir}/%{name}
+    install -D -m 755 %{SOURCE3} %{buildroot}%{_initddir}/%{name}
     %else
     install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
     %endif
