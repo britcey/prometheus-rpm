@@ -4,7 +4,7 @@ anchors:
       spec: '{% extends "spec.tpl" %}'
       unit: '{% extends "unit.tpl" %}'
       init: '{% extends "init.tpl" %}'
-  default_context: &default_context 
+  default_context: &default_context
     static: &default_static_context
       user: prometheus
       group: prometheus
@@ -25,40 +25,40 @@ packages:
       <<: *default_build_steps
     context:
       <<: *default_context
-      static: 
+      static:
         <<: *default_static_context
         version: 0.17.0
         license: ASL 2.0
         URL: https://github.com/prometheus/node_exporter
         summary: Prometheus exporter for machine metrics, written in Go with pluggable metric collectors.
         description: |
-            Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, 
+            Prometheus exporter for hardware and OS metrics exposed by *NIX kernels,
             written in Go with pluggable metric collectors.
   mysqld_exporter:
     build_steps:
       <<: *default_build_steps
     context:
       <<: *default_context
-      static: 
+      static:
         <<: *default_static_context
         version: 0.11.0
         license: ASL 2.0
         URL: https://github.com/prometheus/mysqld_exporter
         summary: Prometheus exporter for MySQL server metrics.
         description: |
-            Prometheus exporter for MySQL server metrics. Supported MySQL versions: 5.1 and up. 
+            Prometheus exporter for MySQL server metrics. Supported MySQL versions: 5.1 and up.
             NOTE: Not all collection methods are supported on MySQL < 5.6
   postgres_exporter:
     build_steps:
       <<: *default_build_steps
     context:
-      static: 
+      static:
         <<: *default_static_context
         version: 0.4.7
         license: ASL 2.0
         summary: Prometheus exporter for PostgreSQL server metrics.
         description: |
-            Prometheus exporter for PostgreSQL server metrics. 
+            Prometheus exporter for PostgreSQL server metrics.
             Supported Postgres versions: 9.1 and up.
         package: '%{name}_v%{version}_linux-amd64'
         URL: https://github.com/wrouesnel/postgres_exporter
@@ -74,7 +74,7 @@ packages:
         version: 0.21.2
         license: ASL 2.0
         summary: Prometheus exporter for Redis server metrics.
-        description: Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x and 4.x 
+        description: Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x and 4.x
         package: '%{name}-v%{version}.linux-amd64'
         URL: https://github.com/oliver006/redis_exporter
       dynamic:
@@ -88,11 +88,22 @@ packages:
       <<: *default_build_steps
     context:
       <<: *default_context
-      static: 
+      static:
         <<: *default_static_context
         version: 0.9.0
         license: ASL 2.0
         URL: https://github.com/prometheus/haproxy_exporter
         summary: This is a simple server that scrapes HAProxy stats and exports them via HTTP for Prometheus consumption.
         description: This is a simple server that scrapes HAProxy stats and exports them via HTTP for Prometheus consumption.
-      
+  ssl_exporter:
+    build_steps:
+      <<: *default_build_steps
+    context:
+      <<: *default_context
+      static:
+        <<: *default_static_context
+        version: 0.2.0
+        license: ASL 2.0
+        URL: https://github.com/ribbybibby/ssl_exporter
+        summary: Exports Prometheus metrics for SSL certificates
+        description: ssl_exporter offers more detailed certificate metrics than blackbox_exporter, including expiration details for all certs in the chain.

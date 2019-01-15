@@ -13,7 +13,7 @@ rabbitmq_exporter \
 pushgateway \
 sachet \
 statsd_exporter \
-ping_exporter 
+ping_exporter
 
 .PHONY: $(PACKAGES7)
 
@@ -21,7 +21,8 @@ AUTO_GENERATED = node_exporter \
 mysqld_exporter \
 redis_exporter \
 haproxy_exporter \
-postgres_exporter
+postgres_exporter \
+ssl_exporter
 
 .PHONY: $(PACKAGES7)
 .PHONY: $(AUTO_GENERATED)
