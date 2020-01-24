@@ -1,1 +1,2 @@
 SNMP_EXPORTER_OPTS="--config.file /etc/prometheus/snmp.yml"
+EXPORTER_ARGS=$SNMP_EXPORTER_OPTS

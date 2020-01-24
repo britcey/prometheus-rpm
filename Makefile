@@ -7,7 +7,6 @@ blackbox_exporter \
 consul_exporter \
 graphite_exporter \
 jmx_exporter \
-snmp_exporter \
 apache_exporter \
 collectd_exporter \
 rabbitmq_exporter \
@@ -28,7 +27,8 @@ redis_exporter \
 haproxy_exporter \
 postgres_exporter \
 kafka_exporter \
-nginx_exporter
+nginx_exporter \
+snmp_exporter
 
 .PHONY: $(PACKAGES7)
 .PHONY: $(AUTO_GENERATED)

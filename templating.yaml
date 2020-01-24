@@ -35,6 +35,20 @@ packages:
         description: |
             Prometheus exporter for hardware and OS metrics exposed by *NIX kernels,
             written in Go with pluggable metric collectors.
+  snmp_exporter:
+    build_steps:
+      <<: *default_build_steps
+    context:
+      <<: *default_context
+      static:
+        <<: *default_static_context
+        version: 0.16.1
+        license: ASL 2.0
+        URL: https://github.com/prometheus/snmp_exporter
+        summary: Prometheus SNMP exporter.
+        description: |
+            This is an exporter that exposes information gathered from SNMP for
+            use by the Prometheus monitoring system.
   mysqld_exporter:
     build_steps:
       <<: *default_build_steps
